@@ -7,159 +7,154 @@
     android:layout_marginTop="10dp"
     tools:context=".RegisterActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/txtFirst"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="First Name"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        app:layout_columnWeight="1" />
-
-                    <EditText
-                        android:id="@+id/txtLast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Last Name"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        app:layout_columnWeight="1" />
-                </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/txtEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:minHeight="48dp" />
-
-                <EditText
-                    android:id="@+id/txtPhone"
+                    android:id="@+id/txtFirst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:ems="10"
-                    android:hint="Phone"
-                    android:inputType="phone"
-                    android:minHeight="48dp" />
-
-                <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp">
-
-                    <EditText
-                        android:id="@+id/txtAddress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Address"
-                        android:inputType="textPostalAddress"
-                        android:minHeight="48dp"
-                        app:layout_columnWeight="2" />
-
-                    <ImageButton
-                        android:id="@+id/btnLocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        app:layout_column="1"
-                        app:layout_row="0"
-                        app:srcCompat="@drawable/my_location"
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                </androidx.gridlayout.widget.GridLayout>
-
-                <EditText
-                    android:id="@+id/txtOrgName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="Organization Name"
+                    android:hint="First Name"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp" />
-
-                <CheckBox
-                    android:id="@+id/chkIsOrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Make donations on behalf of organization" />
-
-                <androidx.gridlayout.widget.GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp">
-
-                    <EditText
-                        android:id="@+id/txtNewPass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="New Password"
-                        android:inputType="textPassword"
-                        android:minHeight="48dp"
-                        app:layout_columnWeight="2"
-                        app:layout_rowWeight="1" />
-
-                    <ImageButton
-                        android:id="@+id/btnShowPass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#00FFFFFF"
-                        android:minHeight="48dp"
-                        app:layout_gravity="center_vertical"
-                        app:srcCompat="@drawable/visibility"
-                        tools:ignore="SpeakableTextPresentCheck" />
-
-                </androidx.gridlayout.widget.GridLayout>
-
-                <EditText
-                    android:id="@+id/txtConfirmPass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="Confirm Password"
-                    android:inputType="textPassword"
                     android:minHeight="48dp"
                     app:layout_columnWeight="1" />
 
-                <Button
-                    android:id="@+id/btnCreateAcc"
-                    android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/txtLast"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Create Account" />
-
+                    android:ems="10"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_columnWeight="1" />
             </LinearLayout>
-        </ScrollView>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Address"
+                    android:inputType="textPostalAddress"
+                    android:minHeight="48dp"
+                    app:layout_columnWeight="2" />
+
+                <ImageButton
+                    android:id="@+id/btnLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    app:layout_column="1"
+                    app:layout_row="0"
+                    app:srcCompat="@drawable/my_location"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/txtOrgName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Organization Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <CheckBox
+                android:id="@+id/chkIsOrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Make donations on behalf of organization" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/txtNewPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="New Password"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    app:layout_columnWeight="2"
+                    app:layout_rowWeight="1" />
+
+                <ImageButton
+                    android:id="@+id/btnShowPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    android:minHeight="48dp"
+                    app:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/visibility"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <EditText
+                android:id="@+id/txtConfirmPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/btnCreateAcc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Create Account" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

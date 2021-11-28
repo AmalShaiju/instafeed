@@ -7,6 +7,7 @@ public class PickupRequest {
     // on init
     private User postedBy;
     private String location;
+    private String description;
     private LocalDateTime datePosted;
     private List<Byte[]> images;
 
@@ -15,12 +16,12 @@ public class PickupRequest {
     private LocalDateTime dateClaimed;
     private LocalDateTime datePickedUp;
 
-
-    public PickupRequest(User postedBy, String location, LocalDateTime datePosted, List<Byte[]> images) {
+    public PickupRequest(User postedBy, String location, String description, LocalDateTime datePosted, List<Byte[]> images) {
         this.postedBy = postedBy;
         this.location = location;
         this.datePosted = datePosted;
         this.images = images;
+        this.description = description;
     }
 
     public User getPostedBy() {
@@ -30,6 +31,8 @@ public class PickupRequest {
     public String getLocation() {
         return location;
     }
+
+    public String getDescription() { return description; }
 
     public List<Byte[]> getImages() {
         return images;
@@ -50,6 +53,14 @@ public class PickupRequest {
     public void setLocation(String location) {
         if (!U.isNullOrEmpty(location)) {
             this.location = location;
+        } else {
+            throw new NullPointerException("location provided is null");
+        }
+    }
+
+    public void setDescription(String description) {
+        if (!U.isNullOrEmpty(description)) {
+            this.description = description;
         } else {
             throw new NullPointerException("location provided is null");
         }
