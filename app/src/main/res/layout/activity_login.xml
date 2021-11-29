@@ -47,14 +47,14 @@
                 app:tint="@color/ghost_white" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/ghost_white"
                 android:ems="10"
                 android:hint="Email"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:textColor="@color/ghost_white"
                 android:textColorHint="@color/ghost_white" />
@@ -69,13 +69,13 @@
                 app:tint="@color/ghost_white" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/txtPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/ghost_white"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:textColor="@color/ghost_white"
                 android:textColorHint="@color/ghost_white" />
@@ -83,7 +83,7 @@
         </androidx.gridlayout.widget.GridLayout>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/lblRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -94,7 +94,8 @@
             android:textColor="@color/ghost_white" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnLogin"
+            android:transitionName="login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

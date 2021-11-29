@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nc.prog1415">
+    package="nc.prog1415"
+    >
 
     <application
         android:allowBackup="true"
@@ -10,18 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Instafeed">
         <activity
+            android:name=".DonorViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".ClaimerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.ClaimerViewActivity"
-            android:exported="true"
-            android:label="@string/title_activity_claimer_view" />
-        <activity
             android:name=".PickupRequestActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".DonorViewActivity"/>
         <activity
             android:name=".RegisterActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />

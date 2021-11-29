@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/openRequests"
+        android:title="Requests"
+        android:icon="@drawable/person_wave"/>
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/done"/>
+    <item
+        android:id="@+id/pastDonations"
+        android:title="Past Donations"
+        android:icon="@drawable/done_all"/>
+</menu>
