@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
                         android:contentDescription="TODO"
-                        tools:srcCompat="@drawable/table" />
+                        app:srcCompat="@drawable/table" />
 
                     <TextView
                         android:id="@+id/textView2"
