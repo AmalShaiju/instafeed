@@ -22,6 +22,17 @@
         <entry key="..\:/FinalAssigment/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalAssigment/app/src/main/res/menu/claimer_view_nav.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/menu/donor_view_nav.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/activity_claimer_view.xml" value="0.2957427536231884" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/activity_pickup_request.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/activity_splash_screen.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/fragment_claims_list_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/fragment_pickup_request_fulfilled.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layout/fragment_pickup_request_list_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/claimer_view/layout/activity_claimer_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/donor_view/layout/activity_donor_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/login/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/user_register/layout/activity_register.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>

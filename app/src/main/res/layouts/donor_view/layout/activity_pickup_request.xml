@@ -138,7 +138,9 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:text="@string/lblCreate"
-                app:layout_columnWeight="1" />
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_row="0" />
         </androidx.gridlayout.widget.GridLayout>
     </LinearLayout>
 
