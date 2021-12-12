@@ -1,29 +1,39 @@
-package nc.prog1415;
+package nc.prog1415.activities.claimer_view.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ClaimerViewActivity extends AppCompatActivity {
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import models.PickupRequest;
+import models.User;
+import models.UserType;
+import nc.prog1415.R;
+import nc.prog1415.activities.claimer_view.fragments.PrClaimedListFragment;
+import nc.prog1415.activities.claimer_view.fragments.PrFulfilledListFragment;
+import nc.prog1415.activities.claimer_view.fragments.PrOpenListFragment;
+
+public class ClaimerViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_claimer_view);
-
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         // as soon as the application opens the first
         // fragment should be shown to the user
         // in this case it is algorithm fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PickupRequestListViewFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new PrOpenListFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,13 +45,13 @@ public class ClaimerViewActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.openRequests:
-                    selectedFragment = new PickupRequestListViewFragment();
+                    selectedFragment = new PrOpenListFragment();
                     break;
                 case R.id.claims:
-                    selectedFragment = new ClaimsListViewFragment();
+                    selectedFragment = new PrClaimedListFragment();
                     break;
                 case R.id.fullfiled:
-                    selectedFragment = new PickupRequestFulfilledFragment();
+                    selectedFragment = new PrFulfilledListFragment();
                     break;
             }
 
@@ -54,4 +64,7 @@ public class ClaimerViewActivity extends AppCompatActivity {
             return true;
         }
     };
+
+
+
 }

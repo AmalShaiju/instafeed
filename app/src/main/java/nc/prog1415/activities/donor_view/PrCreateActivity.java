@@ -1,15 +1,17 @@
-package nc.prog1415;
+package nc.prog1415.activities.donor_view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PickupRequestActivity extends AppCompatActivity {
+import nc.prog1415.R;
+
+public class PrCreateActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle("New Pickup Request");
-        setContentView(R.layout.activity_pickup_request);
+        setContentView(R.layout.activity_pr_create);
     }
 }

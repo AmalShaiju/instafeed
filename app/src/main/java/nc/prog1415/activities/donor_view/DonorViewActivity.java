@@ -1,4 +1,4 @@
-package nc.prog1415;
+package nc.prog1415.activities.donor_view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import nc.prog1415.R;
 
 public class DonorViewActivity extends AppCompatActivity {
     Button btnCreateRequest;
@@ -20,7 +22,7 @@ public class DonorViewActivity extends AppCompatActivity {
         btnCreateRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DonorViewActivity.this, PickupRequestActivity.class);
+                Intent intent = new Intent(DonorViewActivity.this, PrCreateActivity.class);
                 startActivity(intent);
             }
         });

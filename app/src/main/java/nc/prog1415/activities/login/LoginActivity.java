@@ -1,4 +1,4 @@
-package nc.prog1415;
+package nc.prog1415.activities.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,10 @@ import android.widget.TextView;
 
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
-import java.util.Locale;
+import nc.prog1415.activities.claimer_view.activities.ClaimerViewActivity;
+import nc.prog1415.activities.donor_view.DonorViewActivity;
+import nc.prog1415.R;
+import nc.prog1415.activities.user_register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

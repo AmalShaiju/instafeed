@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DonorViewActivity">
+    tools:context=".activities.donor_view.DonorViewActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -228,7 +228,7 @@
                     app:columnCount="2">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/pr_claimed_imgItem"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
@@ -246,7 +246,7 @@
                         app:layout_columnWeight="1">
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/pr_claimed_lblLocation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
@@ -286,7 +286,7 @@
                                 app:layout_columnWeight="1" />
 
                             <TextView
-                                android:id="@+id/textView13"
+                                android:id="@+id/pr_claimed_lblPostedOn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21-09-2021 3:35pm"
@@ -300,7 +300,7 @@
                                 app:layout_columnWeight="1" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/pr_claimed_lblClaimedOn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21-09-2021 4:45pm"

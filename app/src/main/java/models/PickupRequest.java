@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PickupRequest {
@@ -9,14 +10,14 @@ public class PickupRequest {
     private String location;
     private String description;
     private LocalDateTime datePosted;
-    private List<Byte[]> images;
+    private ArrayList<byte[]> images;
 
     // once claimed
     private User claimedBy;
-    private LocalDateTime dateClaimed;
-    private LocalDateTime datePickedUp;
+    private LocalDateTime claimedOn;
+    private LocalDateTime pickedupOn;
 
-    public PickupRequest(User postedBy, String location, String description, LocalDateTime datePosted, List<Byte[]> images) {
+    public PickupRequest(User postedBy, String location, String description, LocalDateTime datePosted, ArrayList<byte[]> images) {
         this.postedBy = postedBy;
         this.location = location;
         this.datePosted = datePosted;
@@ -34,13 +35,15 @@ public class PickupRequest {
 
     public String getDescription() { return description; }
 
-    public List<Byte[]> getImages() {
+    public List<byte[]> getImages() {
         return images;
     }
 
     public LocalDateTime getDatePosted() {
         return datePosted;
     }
+
+    public LocalDateTime getClaimedOn() {   return claimedOn; }
 
     public void setPostedBy(User postedBy) {
         if (postedBy != null) {
@@ -74,7 +77,7 @@ public class PickupRequest {
         }
     }
 
-    public void setImages(List<Byte[]> images) {
+    public void setImages(ArrayList<byte[]> images) {
         if (images != null) {
             this.images = images;
         } else {
@@ -85,7 +88,7 @@ public class PickupRequest {
     public void claimRequest(User claimer) throws Exception {
         if (!isClaimed() && claimer != postedBy) {
             claimedBy = claimer;
-            dateClaimed = LocalDateTime.now();
+            claimedOn = LocalDateTime.now();
         } else {
             throw new Exception("request already claimed");
         }
@@ -94,14 +97,14 @@ public class PickupRequest {
     public void dropClaim(User dropper) throws Exception {
         if (claimedBy.equals(dropper) && !isPickedUp()) { // request can only be dropped by claimer
             claimedBy = null;
-            dateClaimed = null;
+            claimedOn = null;
         } else {
             throw new Exception("request can only be dropped by claimer");
         }
     }
 
     public void pickUp() {
-        datePickedUp = LocalDateTime.now();
+        pickedupOn = LocalDateTime.now();
     }
 
     public boolean isClaimed() {
@@ -109,7 +112,9 @@ public class PickupRequest {
     }
 
     public boolean isPickedUp() {
-        return datePickedUp != null;
+        return pickedupOn != null;
     }
+
+
 
 }

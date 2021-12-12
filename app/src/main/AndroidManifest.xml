@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Instafeed">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.others.SplashScreenActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,21 +18,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DonorViewActivity"
+            android:name=".activities.donor_view.DonorViewActivity"
             android:exported="true" />
         <activity
-            android:name=".ClaimerViewActivity"
+            android:name=".activities.claimer_view.activities.ClaimerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".PickupRequestActivity"
+            android:name=".activities.donor_view.PrCreateActivity"
             android:exported="true"
-            android:parentActivityName=".DonorViewActivity" />
+            android:parentActivityName=".activities.donor_view.DonorViewActivity" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.user_register.RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".activities.login.LoginActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.login.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

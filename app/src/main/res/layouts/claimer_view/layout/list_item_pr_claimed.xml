@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClaimsListViewFragment">
+    android:layout_marginBottom="20dp"
+    tools:context=".activities.claimer_view.fragments.PrClaimedListFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 app:columnCount="2">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/pr_claimed_imgItem"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -44,7 +45,7 @@
                     app:layout_columnWeight="1">
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/pr_claimed_lblLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
@@ -69,7 +70,7 @@
                             app:layout_columnWeight="1" />
 
                         <TextView
-                            android:id="@+id/textView19"
+                            android:id="@+id/pr_claimed_lblUsername"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Amal Shaiju"
@@ -83,7 +84,7 @@
                             app:layout_columnWeight="1" />
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/pr_claimed_lblPostedOn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="21-09-2021 3:35pm"
@@ -97,7 +98,7 @@
                             app:layout_columnWeight="1" />
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/pr_claimed_lblClaimedOn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="21-09-2021 4:45pm"
@@ -115,7 +116,7 @@
                 android:layout_marginBottom="10dp">
 
                 <Button
-                    android:id="@+id/btnPickedup"
+                    android:id="@+id/pr_claimed_btnPickedup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -127,7 +128,7 @@
                     app:layout_row="0" />
 
                 <Button
-                    android:id="@+id/btnDropClaim"
+                    android:id="@+id/pr_claimed_btnDropClaim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"

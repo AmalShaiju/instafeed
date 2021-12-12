@@ -1,9 +1,5 @@
 package models;
 
-enum UserType {
-    INDIVIDUAL,
-    ORGANIZATION
-}
 
 public class User {
     private String first;
@@ -23,6 +19,8 @@ public class User {
         this.organiztionName = organiztionName;
         this.userType = userType;
     }
+
+    public String getFullName(){  return first + last; }
 
     public String getFirst() {
         return first;
@@ -103,7 +101,6 @@ public class User {
     public void setUserType(UserType userType) {
         this.userType = userType;
     }
-
 
     @Override
     public boolean equals(Object other) {
