@@ -38,7 +38,9 @@
         <entry key="..\:/FinalAssignment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_claimed.xml" value="0.3026041666666667" />
         <entry key="..\:/FinalAssignment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_fulfilled.xml" value="0.3645833333333333" />
         <entry key="..\:/FinalAssignment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_open.xml" value="0.20520833333333333" />
-        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/donor_view/layout/activity_donor_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/donor_view/layout/activity_donor_view.xml" value="0.25" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/donor_view/layout/activity_pr_create.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssignment/app/src/main/res/layouts/donor_view/layout/list_item_pr.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssignment/app/src/main/res/layouts/login/layout/activity_login.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssignment/app/src/main/res/layouts/user_register/layout/activity_register.xml" value="0.20520833333333333" />
       </map>

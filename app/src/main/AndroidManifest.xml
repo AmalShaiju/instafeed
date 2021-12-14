@@ -18,15 +18,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.donor_view.DonorViewActivity"
+            android:name=".activities.donor_view.activities.DonorViewActivity"
             android:exported="true" />
         <activity
             android:name=".activities.claimer_view.activities.ClaimerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.donor_view.PrCreateActivity"
+            android:name=".activities.donor_view.activities.PrCreateActivity"
             android:exported="true"
-            android:parentActivityName=".activities.donor_view.DonorViewActivity" />
+            android:parentActivityName=".activities.donor_view.activities.DonorViewActivity" />
         <activity
             android:name=".activities.user_register.RegisterActivity"
             android:exported="true"

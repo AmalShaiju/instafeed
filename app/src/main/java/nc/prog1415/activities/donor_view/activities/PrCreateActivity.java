@@ -1,4 +1,4 @@
-package nc.prog1415.activities.donor_view;
+package nc.prog1415.activities.donor_view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

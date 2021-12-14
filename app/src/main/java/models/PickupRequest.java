@@ -49,6 +49,8 @@ public class PickupRequest {
         return pickedupOn;
     }
 
+    public User getClaimedBy(){return  claimedBy;}
+
     public void setPostedBy(User postedBy) {
         if (postedBy != null) {
             this.postedBy = postedBy;

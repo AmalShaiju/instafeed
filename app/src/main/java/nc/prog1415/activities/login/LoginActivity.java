@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
 import nc.prog1415.activities.claimer_view.activities.ClaimerViewActivity;
-import nc.prog1415.activities.donor_view.DonorViewActivity;
+import nc.prog1415.activities.donor_view.activities.DonorViewActivity;
 import nc.prog1415.R;
 import nc.prog1415.activities.user_register.RegisterActivity;
 
