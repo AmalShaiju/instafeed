@@ -106,11 +106,15 @@ public class PrClaimedListFragment extends Fragment {
     private void seedData() throws Exception {
         User claimer = new User("Saf","Shaiju","amalshaiju16@gmail.com","2898230814","1222 Natanial Crescent", "Wonderboy", UserType.INDIVIDUAL);
         User donor = new User("Amal","Shaiju","amalshaiju16@gmail.com","2898230814","1222 Natanial Crescent", "Wonderboy", UserType.INDIVIDUAL);
+        PickupRequest p3 = new PickupRequest(donor,"test Address","Test item", LocalDateTime.now(),new ArrayList<byte[]>());
         PickupRequest p1 = new PickupRequest(donor,"1222 Natanial Crescent","Table", LocalDateTime.now(),new ArrayList<byte[]>());
         PickupRequest p2 = new PickupRequest(donor,"516 First Ave","Chair", LocalDateTime.now(),new ArrayList<byte[]>());
+
         p1.claimRequest(claimer);
         p2.claimRequest(claimer);
+        p3.claimRequest(claimer);
         claimedPrList.add(p1);
         claimedPrList.add(p2);
+        claimedPrList.add(p3);
     }
 }

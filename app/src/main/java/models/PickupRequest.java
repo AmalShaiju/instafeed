@@ -45,6 +45,10 @@ public class PickupRequest {
 
     public LocalDateTime getClaimedOn() {   return claimedOn; }
 
+    public LocalDateTime getPickedupOn() {
+        return pickedupOn;
+    }
+
     public void setPostedBy(User postedBy) {
         if (postedBy != null) {
             this.postedBy = postedBy;
@@ -54,7 +58,7 @@ public class PickupRequest {
     }
 
     public void setLocation(String location) {
-        if (!U.isNullOrEmpty(location)) {
+        if (!U.IsNullOrEmpty(location)) {
             this.location = location;
         } else {
             throw new NullPointerException("location provided is null");
@@ -62,7 +66,7 @@ public class PickupRequest {
     }
 
     public void setDescription(String description) {
-        if (!U.isNullOrEmpty(description)) {
+        if (!U.IsNullOrEmpty(description)) {
             this.description = description;
         } else {
             throw new NullPointerException("location provided is null");

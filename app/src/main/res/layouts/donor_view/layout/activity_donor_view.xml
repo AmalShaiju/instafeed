@@ -271,7 +271,7 @@
                                 app:layout_columnWeight="1" />
 
                             <TextView
-                                android:id="@+id/textView16"
+                                android:id="@+id/pr_fulfilled_lblUsername"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="YMCA"
@@ -314,7 +314,7 @@
                                 app:layout_columnWeight="1" />
 
                             <TextView
-                                android:id="@+id/textView18"
+                                android:id="@+id/pr_fulfilled_lblPickedUpOn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="21-09-2021 6:45pm"

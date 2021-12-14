@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activities.claimer_view.fragments.PrFulfilledListFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:columnCount="2">
+
+            <ImageView
+                android:id="@+id/pr_fulfilled_imgItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="100dp"
+                android:maxHeight="200dp"
+                android:src="@drawable/table"
+                app:layout_columnWeight="2"
+                app:layout_rowWeight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:id="@+id/pr_fulfilled_lblLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="1222 Natanial Crescent, Burlington"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_columnWeight="2" />
+
+                <androidx.gridlayout.widget.GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:columnCount="2"
+                    app:rowCount="4"
+                    app:useDefaultMargins="false">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Posted By:"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/pr_fulfilled_lblUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amal Shaiju"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Posted On:"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/pr_fulfilled_lblPostedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21-09-2021 3:35pm"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Claimed On:"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/pr_fulfilled_lblClaimedOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21-09-2021 4:45pm"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Pickedup On:"
+                        app:layout_columnWeight="1" />
+
+                    <TextView
+                        android:id="@+id/pr_fulfilled_lblPickedUpOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21-09-2021 6:45pm"
+                        app:layout_columnWeight="1" />
+
+                </androidx.gridlayout.widget.GridLayout>
+
+            </LinearLayout>
+        </androidx.gridlayout.widget.GridLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

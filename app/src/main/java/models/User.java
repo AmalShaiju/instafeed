@@ -20,7 +20,7 @@ public class User {
         this.userType = userType;
     }
 
-    public String getFullName(){  return first + last; }
+    public String getFullName(){  return first + " " + last; }
 
     public String getFirst() {
         return first;
@@ -51,7 +51,7 @@ public class User {
     }
 
     public void setFirst(String first) {
-        if (!U.isNullOrEmpty(first)) {
+        if (!U.IsNullOrEmpty(first)) {
             this.first = first;
         } else {
             throw new NullPointerException("first provided is null");
@@ -59,7 +59,7 @@ public class User {
     }
 
     public void setLast(String last) {
-        if (!U.isNullOrEmpty(last)) {
+        if (!U.IsNullOrEmpty(last)) {
             this.last = last;
         } else {
             throw new NullPointerException("last provided is null");
@@ -67,7 +67,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        if (!U.isNullOrEmpty(email)) {
+        if (!U.IsNullOrEmpty(email)) {
             this.email = email;
         } else {
             throw new NullPointerException("email provided is null");
@@ -75,7 +75,7 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        if (!U.isNullOrEmpty(phone)) {
+        if (!U.IsNullOrEmpty(phone)) {
             this.phone = phone;
         } else {
             throw new NullPointerException("phone provided is null");
@@ -83,7 +83,7 @@ public class User {
     }
 
     public void setAddress(String address) {
-        if (!U.isNullOrEmpty(address)) {
+        if (!U.IsNullOrEmpty(address)) {
             this.address = address;
         } else {
             throw new NullPointerException("address provided is null");
@@ -91,7 +91,7 @@ public class User {
     }
 
     public void setOrganiztionName(String organiztionName) {
-        if (!U.isNullOrEmpty(organiztionName)) {
+        if (!U.IsNullOrEmpty(organiztionName)) {
             this.organiztionName = organiztionName;
         } else {
             throw new NullPointerException("organiztionName provided is null");

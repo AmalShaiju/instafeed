@@ -33,7 +33,6 @@
                     android:maxWidth="100dp"
                     android:maxHeight="200dp"
                     android:src="@drawable/table"
-                    app:layout_columnWeight="2"
                     app:layout_rowWeight="1" />
 
                 <LinearLayout
@@ -45,9 +44,9 @@
 
                     <TextView
                         android:id="@+id/pr_claimed_lblLocation"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="10dp"
                         android:fontFamily="@font/roboto"
                         android:text="1222 Natanial Crescent, Burlington"
                         android:textSize="16sp"
@@ -59,12 +58,13 @@
                         android:layout_height="match_parent"
                         app:columnCount="2"
                         app:rowCount="4"
-                        app:useDefaultMargins="true">
+                        app:useDefaultMargins="false">
 
                         <TextView
                             android:id="@+id/textView9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:text="Posted By:"
                             app:layout_columnWeight="1" />
 
@@ -79,6 +79,7 @@
                             android:id="@+id/textView11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:text="Posted On:"
                             app:layout_columnWeight="1" />
 
@@ -93,6 +94,7 @@
                             android:id="@+id/textView12"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
                             android:text="Claimed On:"
                             app:layout_columnWeight="1" />
 
@@ -137,10 +139,6 @@
                     app:layout_columnWeight="1" />
             </androidx.gridlayout.widget.GridLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import models.U;
 
 import models.PickupRequest;
 import nc.prog1415.R;
@@ -56,8 +57,8 @@ public class PrClaimedRecycleAdapter extends RecyclerView.Adapter<PrClaimedRecyc
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.lblLocation.setText(claimedPrList.get(position).getLocation());
-        holder.lblPostedOn.setText(claimedPrList.get(position).getDatePosted().toString());
-        holder.lblClaimedOn.setText(claimedPrList.get(position).getClaimedOn() == null ? "Not claimed" : claimedPrList.get(position).getClaimedOn().toString());
+        holder.lblPostedOn.setText(U.ToDateString(claimedPrList.get(position).getDatePosted()));
+        holder.lblClaimedOn.setText(U.ToDateString(claimedPrList.get(position).getClaimedOn()));
         holder.lblUsername.setText(claimedPrList.get(position).getPostedBy().getFullName());
 
         //Bitmap itemImgBitMap = U.byteToBitMap(openPrList.get(position).getImages().get(0));
