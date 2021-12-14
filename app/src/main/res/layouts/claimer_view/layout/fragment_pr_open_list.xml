@@ -31,7 +31,7 @@
                 android:padding="10dp">
 
                 <EditText
-                    android:id="@+id/editTextTextPostalAddress"
+                    android:id="@+id/pr_create_txtLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
