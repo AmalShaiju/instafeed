@@ -47,7 +47,7 @@
                 app:tint="@color/ghost_white" />
 
             <EditText
-                android:id="@+id/txtUsername"
+                android:id="@+id/login_txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,7 +69,7 @@
                 app:tint="@color/ghost_white" />
 
             <EditText
-                android:id="@+id/txtPassword"
+                android:id="@+id/login_txtPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/ghost_white"
@@ -83,7 +83,7 @@
         </androidx.gridlayout.widget.GridLayout>
 
         <TextView
-            android:id="@+id/lblRegister"
+            android:id="@+id/login_lblRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -94,7 +94,7 @@
             android:textColor="@color/ghost_white" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/login_btnLogin"
             android:transitionName="login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -15,27 +15,43 @@ import models.User;
 import models.UserType;
 import nc.prog1415.R;
 import nc.prog1415.controllers.login.LoginActivity;
+import nc.prog1415.controllers.user_register.RegisterActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
-
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        try {
-            Context.seedData();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         getSupportActionBar().hide();
+
+        context = getContextFromIntent();
+        if(context == null){
+            try {
+                context = new Context();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         Handler h = new Handler();
         final Runnable r = new Runnable() {
             public void run() {
-                startActivity( new Intent(SplashScreenActivity.this, LoginActivity.class));
+                NaviagteTo(LoginActivity.class);
             }
         };
         h.postDelayed(r,3000);
 
+    }
+
+    private Context getContextFromIntent(){
+        return (Context) getIntent().getSerializableExtra("Context");
+    }
+
+    private void NaviagteTo(Class toActivity){
+        Intent intent = new Intent(SplashScreenActivity.this,toActivity);
+        intent.putExtra("Context", context);
+        startActivity(intent);
     }
 
 

@@ -9,15 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
+import models.Context;
+import models.U;
 import nc.prog1415.controllers.claimer_view.activities.ClaimerViewActivity;
 import nc.prog1415.controllers.donor_view.activities.DonorViewActivity;
 import nc.prog1415.R;
 import nc.prog1415.controllers.user_register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
+    private Context context;
 
     Button btnLogin;
     EditText txtUsername;
@@ -30,31 +34,30 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
-        btnLogin = findViewById(R.id.btnLogin);
-        txtUsername = findViewById(R.id.txtUsername);
-        lblRegister = findViewById(R.id.lblRegister);
+
+        context = getContextFromIntent();
+        setControls();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent;
-                String s = txtUsername.getText().toString();
-                if(s.equals("donor")){
-                    intent = new Intent(LoginActivity.this, DonorViewActivity.class);
-
-                }else{
-                    intent = new Intent(LoginActivity.this, ClaimerViewActivity.class);
+                boolean loginSuccess = context.Login(U.getFromTxtbox(txtUsername),U.getFromTxtbox(txtPassword));
+                if(loginSuccess){
+                    if(false){
+                        NaviagteTo(ClaimerViewActivity.class);
+                    }else{
+                        NaviagteTo(DonorViewActivity.class);
+                    }
+                }else {
+                    Toast.makeText(getApplicationContext(),"Username or password does not match",Toast.LENGTH_LONG);
                 }
-                Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, btnLogin, "login").toBundle();
-                startActivity(intent,bundle);
             }
         });
 
         lblRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                NaviagteTo(RegisterActivity.class);
             }
         });
     }
@@ -63,5 +66,24 @@ public class LoginActivity extends AppCompatActivity {
         setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
         getWindow().setSharedElementsUseOverlay(false);
     }
+
+    private void setControls(){
+        btnLogin = findViewById(R.id.login_btnLogin);
+        txtUsername = findViewById(R.id.login_txtUsername);
+        txtPassword = findViewById(R.id.login_txtPassword);
+        lblRegister = findViewById(R.id.login_lblRegister);
+    }
+
+    private void NaviagteTo(Class toActivity){
+       Intent intent = new Intent(LoginActivity.this,toActivity);
+       intent.putExtra("Context", context);
+       Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, btnLogin, "login").toBundle();
+       startActivity(intent,bundle);
+    }
+
+    private Context getContextFromIntent(){
+        return (Context) getIntent().getSerializableExtra("Context");
+    }
+
 
 }

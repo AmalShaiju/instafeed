@@ -28,7 +28,8 @@ import nc.prog1415.controllers.claimer_view.recycler_adapters.PrFulFilledRecycle
  * create an instance of this fragment.
  */
 public class PrFulfilledListFragment extends Fragment {
-    private ArrayList<PickupRequest> fulfilledPrList;
+    Context context;
+
     private RecyclerView fulfilledPrRecyclerView;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -80,13 +81,12 @@ public class PrFulfilledListFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        fulfilledPrList = new ArrayList();
         fulfilledPrRecyclerView = view.findViewById(R.id.pr_fulfilled_recyView);
         setAdapter();
     }
 
     private void setAdapter() {
-        PrFulFilledRecycleAdapter adapter = new PrFulFilledRecycleAdapter(Context.getPickedupByMe());
+        PrFulFilledRecycleAdapter adapter = new PrFulFilledRecycleAdapter(context.getPickedupByMe());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         fulfilledPrRecyclerView.setLayoutManager(layoutManager);
         fulfilledPrRecyclerView.setItemAnimator(new DefaultItemAnimator());

@@ -3,7 +3,9 @@ package models;
 
 import com.google.android.libraries.places.api.model.Place;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String first;
     private String last;
     private String email;
@@ -14,7 +16,7 @@ public class User {
     private UserType userType;
 
 
-    public User(String first, String last, String email, String phone, String address, String organiztionName, UserType userType) {
+    public User(String first, String last, String email, String phone, String address, String organiztionName,String password, UserType userType) {
         this.first = first;
         this.last = last;
         this.email = email;
@@ -22,6 +24,7 @@ public class User {
         this.address = address;
         this.organiztionName = organiztionName;
         this.userType = userType;
+        this.password = password;
     }
 
     public String getFullName(){  return first + " " + last; }
@@ -108,7 +111,7 @@ public class User {
         return password;
     }
 
-    public void resetPassword(String newPassword){
+    public void setPassword(String newPassword){
         this.password= newPassword;
     }
 

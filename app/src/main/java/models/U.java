@@ -1,5 +1,6 @@
 package models;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.EditText;
@@ -30,8 +31,13 @@ public class U {
     }
 
     public static String getFromTxtbox(EditText txtbox){
-        return txtbox.getText().toString();
+        return txtbox.getText().toString().trim();
     }
+
+//    private void getIntent(Context context,Class fromActivity, Class toActivity) {
+//        Intent intent = new Intent(fromActivity,toActivity);
+//        intent.putExtra("MyClass", context);
+//    }
 
 
 }

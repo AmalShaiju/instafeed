@@ -1,10 +1,11 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PickupRequest {
+public class PickupRequest  implements Serializable {
     // on init
     private User postedBy;
     private String location;
