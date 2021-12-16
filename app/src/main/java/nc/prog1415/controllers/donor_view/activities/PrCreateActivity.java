@@ -1,4 +1,4 @@
-package nc.prog1415.activities.donor_view.activities;
+package nc.prog1415.controllers.donor_view.activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +24,7 @@ import nc.prog1415.R;
 public class PrCreateActivity extends AppCompatActivity {
     EditText txtLocation;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class PrCreateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pr_create);
 
         txtLocation = findViewById(R.id.pr_create_txtLocation);
+
 
         //Inititalize places
         Places.initialize(getApplicationContext(),"AIzaSyBPWqoOuPUoqu0EZjszT1I_0g23D9MZrnw");

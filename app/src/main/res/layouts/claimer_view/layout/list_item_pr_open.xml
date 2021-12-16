@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="20dp"
-    tools:context=".activities.claimer_view.fragments.PrOpenListFragment">
+    tools:context=".controllers.claimer_view.fragments.PrOpenListFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

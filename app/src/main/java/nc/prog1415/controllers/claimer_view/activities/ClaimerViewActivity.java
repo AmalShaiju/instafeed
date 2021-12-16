@@ -1,4 +1,4 @@
-package nc.prog1415.activities.claimer_view.activities;
+package nc.prog1415.controllers.claimer_view.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,10 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import models.PickupRequest;
-import models.User;
-import models.UserType;
 import nc.prog1415.R;
-import nc.prog1415.activities.claimer_view.fragments.PrClaimedListFragment;
-import nc.prog1415.activities.claimer_view.fragments.PrFulfilledListFragment;
-import nc.prog1415.activities.claimer_view.fragments.PrOpenListFragment;
+import nc.prog1415.controllers.claimer_view.fragments.PrClaimedListFragment;
+import nc.prog1415.controllers.claimer_view.fragments.PrFulfilledListFragment;
+import nc.prog1415.controllers.claimer_view.fragments.PrOpenListFragment;
 
 public class ClaimerViewActivity extends AppCompatActivity {
     @Override

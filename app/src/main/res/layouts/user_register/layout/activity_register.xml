@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
-    tools:context=".activities.user_register.RegisterActivity">
+    tools:context=".controllers.user_register.RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/txtFirst"
+                    android:id="@+id/user_register_txtFirst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -34,7 +34,7 @@
                     app:layout_columnWeight="1" />
 
                 <EditText
-                    android:id="@+id/txtLast"
+                    android:id="@+id/user_register_txtLast"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -45,7 +45,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/txtEmail"
+                android:id="@+id/user_register_txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -55,7 +55,7 @@
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/txtPhone"
+                android:id="@+id/user_register_txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -70,7 +70,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/txtAddress"
+                    android:id="@+id/user_register_txtAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -83,6 +83,7 @@
                     android:id="@+id/btnLocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
                     android:minHeight="48dp"
                     app:layout_column="1"
                     app:layout_row="0"
@@ -91,22 +92,38 @@
 
             </androidx.gridlayout.widget.GridLayout>
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/user_register_rbtnDonor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Donor" />
+
+                <RadioButton
+                    android:id="@+id/user_register_rbtnClaimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Claimer" />
+            </RadioGroup>
+
             <EditText
-                android:id="@+id/txtOrgName"
+                android:id="@+id/user_register_txtOrgName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
                 android:hint="Organization Name"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <CheckBox
-                android:id="@+id/chkIsOrg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Make donations on behalf of organization" />
+                android:minHeight="48dp"
+                android:visibility="gone" />
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
@@ -114,7 +131,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/txtNewPass"
+                    android:id="@+id/user_register_txtNewPass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -137,7 +154,7 @@
             </androidx.gridlayout.widget.GridLayout>
 
             <EditText
-                android:id="@+id/txtConfirmPass"
+                android:id="@+id/user_register_txtConfirmPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -148,7 +165,7 @@
                 app:layout_columnWeight="1" />
 
             <Button
-                android:id="@+id/btnCreateAcc"
+                android:id="@+id/user_register_btnCreateAcc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"

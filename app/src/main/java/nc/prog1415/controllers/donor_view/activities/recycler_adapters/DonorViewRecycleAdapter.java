@@ -1,11 +1,8 @@
-package nc.prog1415.activities.donor_view.activities.recycler_adapters;
+package nc.prog1415.controllers.donor_view.activities.recycler_adapters;
 
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;

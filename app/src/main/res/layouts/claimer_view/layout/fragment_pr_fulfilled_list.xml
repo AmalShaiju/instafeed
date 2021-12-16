@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.claimer_view.fragments.PrFulfilledListFragment">
+    tools:context=".controllers.claimer_view.fragments.PrFulfilledListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pr_fulfilled_recyView"

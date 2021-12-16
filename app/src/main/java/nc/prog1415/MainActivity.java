@@ -6,6 +6,10 @@ import android.os.Bundle;
 import com.google.android.material.transition.platform.MaterialContainerTransform;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
+import models.Context;
+import models.User;
+import models.UserType;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

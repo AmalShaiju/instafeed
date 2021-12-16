@@ -1,4 +1,4 @@
-package nc.prog1415.activities.claimer_view.recycler_adapters;
+package nc.prog1415.controllers.claimer_view.recycler_adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

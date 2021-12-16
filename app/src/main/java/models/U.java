@@ -2,7 +2,9 @@ package models;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,5 +28,10 @@ public class U {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd h:m a");
         return dateTime.format(formatter); // "1986-04-08 12:30"
     }
+
+    public static String getFromTxtbox(EditText txtbox){
+        return txtbox.getText().toString();
+    }
+
 
 }

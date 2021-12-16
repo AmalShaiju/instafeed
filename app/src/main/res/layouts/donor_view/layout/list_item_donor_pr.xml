@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".activities.donor_view.activities.DonorViewActivity">
+    tools:context=".controllers.donor_view.activities.DonorViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

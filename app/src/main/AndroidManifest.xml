@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Instafeed">
         <activity
-            android:name=".activities.others.SplashScreenActivity"
+            android:name=".controllers.others.SplashScreenActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,21 +18,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.donor_view.activities.DonorViewActivity"
+            android:name=".controllers.donor_view.activities.DonorViewActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.claimer_view.activities.ClaimerViewActivity"
+            android:name=".controllers.claimer_view.activities.ClaimerViewActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.donor_view.activities.PrCreateActivity"
+            android:name=".controllers.donor_view.activities.PrCreateActivity"
             android:exported="true"
-            android:parentActivityName=".activities.donor_view.activities.DonorViewActivity" />
+            android:parentActivityName=".controllers.donor_view.activities.DonorViewActivity" />
         <activity
-            android:name=".activities.user_register.RegisterActivity"
+            android:name=".controllers.user_register.RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".activities.login.LoginActivity" />
+            android:parentActivityName=".controllers.login.LoginActivity" />
         <activity
-            android:name=".activities.login.LoginActivity"
+            android:name=".controllers.login.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

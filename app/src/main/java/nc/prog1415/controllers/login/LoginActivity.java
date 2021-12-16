@@ -1,4 +1,4 @@
-package nc.prog1415.activities.login;
+package nc.prog1415.controllers.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,10 +12,10 @@ import android.widget.TextView;
 
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 
-import nc.prog1415.activities.claimer_view.activities.ClaimerViewActivity;
-import nc.prog1415.activities.donor_view.activities.DonorViewActivity;
+import nc.prog1415.controllers.claimer_view.activities.ClaimerViewActivity;
+import nc.prog1415.controllers.donor_view.activities.DonorViewActivity;
 import nc.prog1415.R;
-import nc.prog1415.activities.user_register.RegisterActivity;
+import nc.prog1415.controllers.user_register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package nc.prog1415.activities.claimer_view.fragments;
+package nc.prog1415.controllers.claimer_view.fragments;
 
 import android.os.Bundle;
 
@@ -15,11 +15,12 @@ import android.view.ViewGroup;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import models.Context;
 import models.PickupRequest;
 import models.User;
 import models.UserType;
 import nc.prog1415.R;
-import nc.prog1415.activities.claimer_view.recycler_adapters.PrOpenRecycleAdapter;
+import nc.prog1415.controllers.claimer_view.recycler_adapters.PrOpenRecycleAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,26 +83,15 @@ public class PrOpenListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         openPrList = new ArrayList();
         openPrRecyclerView = view.findViewById(R.id.pr_claimed_recyView);
-        setPickUPRequest();
         setAdapter();
     }
 
     private void setAdapter() {
-        PrOpenRecycleAdapter adapter = new PrOpenRecycleAdapter(openPrList);
+        PrOpenRecycleAdapter adapter = new PrOpenRecycleAdapter(Context.getAllOpenPr());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-
-        // add space between list items
-        // DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(openPrRecyclerView.getContext(), layoutManager.getOrientation());
-        // openPrRecyclerView.addItemDecoration(dividerItemDecoration);
-
         openPrRecyclerView.setLayoutManager(layoutManager);
         openPrRecyclerView.setItemAnimator(new DefaultItemAnimator());
         openPrRecyclerView.setAdapter(adapter);
     }
 
-    private void setPickUPRequest(){
-        User user = new User("Amal","Shaiju","amalshaiju16@gmail.com","2898230814","1222 Natanial Crescent", "Wonderboy", UserType.INDIVIDUAL);
-        openPrList.add(new PickupRequest(user,"1222 Natanial Crescent","Table", LocalDateTime.now(),new ArrayList<byte[]>()));
-        openPrList.add(new PickupRequest(user,"1222 Natanial Crescent","Chair", LocalDateTime.now(),new ArrayList<byte[]>()));
-    }
 }

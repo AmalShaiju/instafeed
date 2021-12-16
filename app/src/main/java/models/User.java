@@ -1,6 +1,8 @@
 package models;
 
 
+import com.google.android.libraries.places.api.model.Place;
+
 public class User {
     private String first;
     private String last;
@@ -8,7 +10,9 @@ public class User {
     private String phone;
     private String address;
     private String organiztionName;
+    private String password; // will change to hash
     private UserType userType;
+
 
     public User(String first, String last, String email, String phone, String address, String organiztionName, UserType userType) {
         this.first = first;
@@ -49,6 +53,8 @@ public class User {
     public String getOrganiztionName() {
         return organiztionName;
     }
+
+    public boolean isClaimer(){return userType == UserType.CLAIMER;}
 
     public void setFirst(String first) {
         if (!U.IsNullOrEmpty(first)) {
@@ -98,13 +104,22 @@ public class User {
         }
     }
 
+    public String getPassword(){
+        return password;
+    }
+
+    public void resetPassword(String newPassword){
+        this.password= newPassword;
+    }
+
     public void setUserType(UserType userType) {
         this.userType = userType;
     }
 
     @Override
     public boolean equals(Object other) {
-        return phone == ((User) other).phone;
+        return email == ((User) other).email;
     }
+
 
 }
