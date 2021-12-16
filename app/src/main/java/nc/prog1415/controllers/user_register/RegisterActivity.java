@@ -119,13 +119,13 @@ public class RegisterActivity extends AppCompatActivity {
     private boolean isInputDataValid(){
         boolean isValid = false;
 
-        isValid =  !U.IsNullOrEmpty(U.getFromTxtbox(txtLocation))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtFirstName))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtLastName))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtEmail))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtPhone))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtNewPassword))
-                && !U.IsNullOrEmpty(U.getFromTxtbox(txtConfirmPassword));
+        isValid =  !(U.IsNullOrEmpty(U.getFromTxtbox(txtLocation))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtFirstName))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtLastName))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtEmail))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtPhone))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtNewPassword))
+                && U.IsNullOrEmpty(U.getFromTxtbox(txtConfirmPassword)));
 
         if(rbtnClaimer.isChecked()){
             if(U.IsNullOrEmpty(U.getFromTxtbox(txtOrganizationName)))

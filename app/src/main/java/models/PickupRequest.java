@@ -1,5 +1,9 @@
 package models;
 
+import android.graphics.Bitmap;
+
+import androidx.annotation.Nullable;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,18 +15,18 @@ public class PickupRequest  implements Serializable {
     private String location;
     private String description;
     private LocalDateTime datePosted;
-    private ArrayList<byte[]> images;
+    private Bitmap image;
 
     // once claimed
     private User claimedBy;
     private LocalDateTime claimedOn;
     private LocalDateTime pickedupOn;
 
-    public PickupRequest(User postedBy, String location, String description, LocalDateTime datePosted, ArrayList<byte[]> images) {
-        this.postedBy = postedBy;
+    public PickupRequest(String location, String description,@Nullable Bitmap image) {
+        this.postedBy = Context.loggedInUser;
         this.location = location;
-        this.datePosted = datePosted;
-        this.images = images;
+        this.datePosted = LocalDateTime.now();
+        this.image = image;
         this.description = description;
     }
 
@@ -36,8 +40,8 @@ public class PickupRequest  implements Serializable {
 
     public String getDescription() { return description; }
 
-    public List<byte[]> getImages() {
-        return images;
+    public Bitmap getImage() {
+        return image;
     }
 
     public LocalDateTime getDatePosted() {
@@ -84,9 +88,9 @@ public class PickupRequest  implements Serializable {
         }
     }
 
-    public void setImages(ArrayList<byte[]> images) {
-        if (images != null) {
-            this.images = images;
+    public void setImages(Bitmap image) {
+        if (image != null) {
+            this.image = image;
         } else {
             throw new NullPointerException("image provided is null");
         }

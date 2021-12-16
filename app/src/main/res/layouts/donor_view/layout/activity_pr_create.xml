@@ -69,7 +69,7 @@
             android:minHeight="150dp">
 
             <EditText
-                android:id="@+id/editTextTextMultiLine2"
+                android:id="@+id/pr_create_txtDesc"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -94,12 +94,33 @@
                 android:text="Please attach a few images of the item" />
 
             <ImageButton
-                android:id="@+id/btnAddImg"
+                android:id="@+id/pr_create_btnAddImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:minHeight="100dp"
                 app:srcCompat="@drawable/add_photo"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:id="@+id/pr_create_imgItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:minWidth="300dp"
+                android:minHeight="200dp"
+                android:visibility="gone"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageButton
+                android:id="@+id/pr_create_btnRetakeImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/refresh"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
@@ -121,7 +142,7 @@
             android:layout_marginBottom="30dp">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/pr_create_btnCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -132,7 +153,7 @@
                 app:layout_columnWeight="1" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/pr_create_btnCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
