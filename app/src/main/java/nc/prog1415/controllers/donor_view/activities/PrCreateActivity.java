@@ -24,7 +24,6 @@ import nc.prog1415.R;
 public class PrCreateActivity extends AppCompatActivity {
     EditText txtLocation;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +61,6 @@ public class PrCreateActivity extends AppCompatActivity {
             txtLocation.setText(place.getAddress());
         }else if(resultCode == AutocompleteActivity.RESULT_ERROR){
             Status status = Autocomplete.getStatusFromIntent(data);
-
             Toast.makeText(getApplicationContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
         }
     }

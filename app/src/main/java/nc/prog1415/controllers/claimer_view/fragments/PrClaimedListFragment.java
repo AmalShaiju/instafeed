@@ -28,8 +28,6 @@ import nc.prog1415.controllers.claimer_view.recycler_adapters.PrClaimedRecycleAd
  * create an instance of this fragment.
  */
 public class PrClaimedListFragment extends Fragment {
-    Context context;
-
     private ArrayList<PickupRequest> claimedPrList;
     private RecyclerView claimedPrRecyclerView;
 
@@ -88,7 +86,7 @@ public class PrClaimedListFragment extends Fragment {
     }
 
     private void setAdapter() {
-        PrClaimedRecycleAdapter adapter = new PrClaimedRecycleAdapter(context.getClaimedByMe());
+        PrClaimedRecycleAdapter adapter = new PrClaimedRecycleAdapter(Context.getClaimedByMe());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         claimedPrRecyclerView.setLayoutManager(layoutManager);
         claimedPrRecyclerView.setItemAnimator(new DefaultItemAnimator());

@@ -13,6 +13,7 @@ import android.widget.Button;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import models.Context;
 import models.PickupRequest;
 import models.User;
 import models.UserType;
@@ -21,7 +22,6 @@ import nc.prog1415.controllers.donor_view.activities.recycler_adapters.DonorView
 
 public class DonorViewActivity extends AppCompatActivity {
     Button btnCreateRequest;
-    private ArrayList<PickupRequest> prList;
     private RecyclerView donorPrRecyclerView;
 
     @Override
@@ -39,13 +39,12 @@ public class DonorViewActivity extends AppCompatActivity {
             }
         });
 
-        prList = new ArrayList();
         donorPrRecyclerView = findViewById(R.id.donor_pr_recyView);
         setAdapter();
     }
 
     private void setAdapter() {
-        DonorViewRecycleAdapter adapter = new DonorViewRecycleAdapter(prList);
+        DonorViewRecycleAdapter adapter = new DonorViewRecycleAdapter(Context.getPostedByMe());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 
         // add space between list items

@@ -21,7 +21,6 @@ import nc.prog1415.R;
 import nc.prog1415.controllers.user_register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    private Context context;
 
     Button btnLogin;
     EditText txtUsername;
@@ -34,14 +33,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
-
-        context = getContextFromIntent();
         setControls();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean loginSuccess = context.Login(U.getFromTxtbox(txtUsername),U.getFromTxtbox(txtPassword));
+                boolean loginSuccess = Context.Login(U.getFromTxtbox(txtUsername),U.getFromTxtbox(txtPassword));
                 if(loginSuccess){
                     if(false){
                         NaviagteTo(ClaimerViewActivity.class);
@@ -76,13 +73,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void NaviagteTo(Class toActivity){
        Intent intent = new Intent(LoginActivity.this,toActivity);
-       intent.putExtra("Context", context);
        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this, btnLogin, "login").toBundle();
        startActivity(intent,bundle);
-    }
-
-    private Context getContextFromIntent(){
-        return (Context) getIntent().getSerializableExtra("Context");
     }
 
 

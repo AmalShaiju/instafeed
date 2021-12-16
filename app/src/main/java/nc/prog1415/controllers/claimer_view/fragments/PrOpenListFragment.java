@@ -28,7 +28,6 @@ import nc.prog1415.controllers.claimer_view.recycler_adapters.PrOpenRecycleAdapt
  * create an instance of this fragment.
  */
 public class PrOpenListFragment extends Fragment {
-    Context context;
     private RecyclerView openPrRecyclerView;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -86,7 +85,7 @@ public class PrOpenListFragment extends Fragment {
     }
 
     private void setAdapter() {
-        PrOpenRecycleAdapter adapter = new PrOpenRecycleAdapter(context.getAllOpenPr());
+        PrOpenRecycleAdapter adapter = new PrOpenRecycleAdapter(Context.getAllOpenPr());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         openPrRecyclerView.setLayoutManager(layoutManager);
         openPrRecyclerView.setItemAnimator(new DefaultItemAnimator());

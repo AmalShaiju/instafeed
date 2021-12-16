@@ -18,20 +18,16 @@ import nc.prog1415.controllers.login.LoginActivity;
 import nc.prog1415.controllers.user_register.RegisterActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
-    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         getSupportActionBar().hide();
 
-        context = getContextFromIntent();
-        if(context == null){
-            try {
-                context = new Context();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            Context.seedData();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         Handler h = new Handler();
@@ -44,13 +40,9 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     }
 
-    private Context getContextFromIntent(){
-        return (Context) getIntent().getSerializableExtra("Context");
-    }
-
     private void NaviagteTo(Class toActivity){
         Intent intent = new Intent(SplashScreenActivity.this,toActivity);
-        intent.putExtra("Context", context);
+        //intent.putExtra("Context", context);
         startActivity(intent);
     }
 

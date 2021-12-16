@@ -79,17 +79,6 @@
                     android:minHeight="48dp"
                     app:layout_columnWeight="2" />
 
-                <ImageButton
-                    android:id="@+id/btnLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="false"
-                    android:minHeight="48dp"
-                    app:layout_column="1"
-                    app:layout_row="0"
-                    app:srcCompat="@drawable/my_location"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
             </androidx.gridlayout.widget.GridLayout>
 
             <RadioGroup
@@ -140,16 +129,6 @@
                     android:minHeight="48dp"
                     app:layout_columnWeight="2"
                     app:layout_rowWeight="1" />
-
-                <ImageButton
-                    android:id="@+id/btnShowPass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    android:minHeight="48dp"
-                    app:layout_gravity="center_vertical"
-                    app:srcCompat="@drawable/visibility"
-                    tools:ignore="SpeakableTextPresentCheck" />
 
             </androidx.gridlayout.widget.GridLayout>
 

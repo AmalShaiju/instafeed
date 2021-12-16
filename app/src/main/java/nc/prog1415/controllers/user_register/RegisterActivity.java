@@ -1,5 +1,6 @@
 package nc.prog1415.controllers.user_register;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -7,9 +8,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+
+import java.util.Arrays;
+import java.util.List;
 
 import models.Context;
 import models.U;
@@ -17,10 +29,10 @@ import models.User;
 import models.UserType;
 import nc.prog1415.R;
 import nc.prog1415.controllers.claimer_view.activities.ClaimerViewActivity;
+import nc.prog1415.controllers.donor_view.activities.PrCreateActivity;
 import nc.prog1415.controllers.login.LoginActivity;
 
 public class RegisterActivity extends AppCompatActivity {
-    private Context context;
 
     EditText txtLocation;
     EditText txtFirstName;
@@ -40,15 +52,44 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Create User Account");
         setContentView(R.layout.activity_register);
         setControls();
-        context = getContextFromIntent();
+
+        //Inititalize places
+        Places.initialize(getApplicationContext(),"AIzaSyBPWqoOuPUoqu0EZjszT1I_0g23D9MZrnw");
+
+        txtLocation.setFocusable(false);
+        txtLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Initializer place field list
+                List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS, Place.Field.LAT_LNG,Place.Field.NAME);
+
+                // Create intent
+                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY,fieldList).build(RegisterActivity.this);
+
+                //start activity result
+                startActivityForResult(intent,100);
+
+            }
+        });
+
+        rbtnClaimer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    txtOrganizationName.setVisibility(View.VISIBLE);
+                }else{
+                    txtOrganizationName.setVisibility(View.GONE);
+                }
+            }
+        });
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isInputDataValid()){
-                    if((U.getFromTxtbox(txtNewPassword) == U.getFromTxtbox(txtConfirmPassword))){
+                    if((U.getFromTxtbox(txtNewPassword).equals(U.getFromTxtbox(txtConfirmPassword)))){
                         User newUser = getUserFromInput();
-                        boolean registerSuccess = context.RegisterUser(newUser);
+                        boolean registerSuccess = Context.RegisterUser(newUser);
                         if(registerSuccess)
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         else
@@ -71,7 +112,8 @@ public class RegisterActivity extends AppCompatActivity {
         txtConfirmPassword = findViewById(R.id.user_register_txtConfirmPass);
         btnCreate = findViewById(R.id.user_register_btnCreateAcc);
         rbtnClaimer = findViewById(R.id.user_register_rbtnClaimer);
-        rbtnDonor = findViewById(R.id.user_register_rbtnDonor);
+        txtOrganizationName = findViewById(R.id.user_register_txtOrgName);
+
     }
 
     private boolean isInputDataValid(){
@@ -109,8 +151,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void NaviagteTo(Class toActivity){
         Intent intent = new Intent(RegisterActivity.this,toActivity);
-        intent.putExtra("Context", context);
+        //intent.putExtra("Context", context);
         startActivity(intent);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100 && resultCode == RESULT_OK){
+            Place place = Autocomplete.getPlaceFromIntent(data);
+            txtLocation.setText(place.getAddress());
+        }else if(resultCode == AutocompleteActivity.RESULT_ERROR){
+            Status status = Autocomplete.getStatusFromIntent(data);
+            Toast.makeText(getApplicationContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
 }
