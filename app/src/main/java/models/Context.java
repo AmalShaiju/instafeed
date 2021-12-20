@@ -15,7 +15,7 @@ public class Context {
     public static ArrayList<PickupRequest> prList;
 
     public static ArrayList<PickupRequest> getClaimedByMe() {
-        return prList.stream().filter(p -> p.isClaimed() && p.getClaimedBy().equals(loggedInUser)).collect(Collectors.toCollection(ArrayList::new));
+        return prList.stream().filter(p -> p.isClaimed() && !p.isPickedUp() && p.getClaimedBy().equals(loggedInUser)).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static ArrayList<PickupRequest> getPickedupByMe(){
@@ -54,6 +54,26 @@ public class Context {
         loggedInUser = null;
     }
 
+    public static void CreateNewPr(PickupRequest prToAdd){
+        prList.add(prToAdd);
+    }
+
+    public static boolean ClaimRequest(PickupRequest pr) throws Exception {
+        pr.claimRequest(loggedInUser);
+        return true;
+    }
+
+    public static boolean PickupRequest(PickupRequest pr){
+        pr.pickUp();
+        return true;
+    }
+
+    public static boolean DropRequest(PickupRequest pr) throws Exception {
+        pr.dropClaim(loggedInUser);
+        return true;
+    }
+
+
 
     public static void seedData() throws Exception {
         if(userList == null){
@@ -64,15 +84,14 @@ public class Context {
             prList = new ArrayList<PickupRequest>();
         }
 
-        User claimer = new User("Claimer","Adrin","Claimer@gmail.com","2898230814","1222 Natanial Crescent", "Wonderboy", "a", UserType.CLAIMER);
-        User donor = new User("Donor","Roshan","Donor@gmail.com","2898230814","1222 Natanial Crescent", "Wonderboy","a", UserType.DONOR);
-        PickupRequest p3 = new PickupRequest("test Address","Test item",null);
-        PickupRequest p1 = new PickupRequest("1222 Natanial Crescent","Table",null);
-        PickupRequest p2 = new PickupRequest("516 First Ave","Chair",null);
+        User claimer = new User("Claimer","","Claimer@gmail.com","2898230814","516 first ave", "YMCA", "a", UserType.CLAIMER);
+        User donor = new User("Donor","","Donor@gmail.com","2898230814","1222 natanial crescent", "","a", UserType.DONOR);
+        PickupRequest p3 = new PickupRequest("Address 1","Test item 1", donor,null);
+        PickupRequest p1 = new PickupRequest("Address 2","Test item 2",donor,null);
+        PickupRequest p2 = new PickupRequest("Address 3","Test item 3",donor,null);
 
         p2.claimRequest(claimer);
         p3.claimRequest(claimer);
-        p2.pickUp();
         p3.pickUp();
         prList.add(p1);
         prList.add(p2);

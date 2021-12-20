@@ -10,76 +10,70 @@
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
+        <TextView
+            android:id="@+id/pr_open_lblLoction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:fontFamily="@font/roboto"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:text="1222 natanial Cresent, Burlington, Ontario"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/pr_open_lblLoction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:text="1222 natanial Cresent, Burlington, Ontario"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+        <TextView
+            android:id="@+id/pr_open_lblDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="24-09-2021 4:35pm"
+            android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/pr_open_lblDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="24-09-2021 4:35pm"
-                android:textSize="12sp" />
+        <TextView
+            android:id="@+id/pr_open_lblUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="10dp"
+            android:text="Amal Shaiju"
+            android:textSize="12sp" />
 
-            <TextView
-                android:id="@+id/pr_open_lblUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="10dp"
-                android:text="Amal Shaiju"
-                android:textSize="12sp" />
+        <ImageView
+            android:id="@+id/pr_open_imgItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="TODO"
+            android:maxHeight="200dp"
+            android:minHeight="200dp"
+            app:srcCompat="@drawable/no_image" />
 
-            <ImageView
-                android:id="@+id/pr_open_imgItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="TODO"
-                app:srcCompat="@drawable/table" />
+        <TextView
+            android:id="@+id/pr_open_lblDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/poppins"
+            android:justificationMode="inter_word"
+            android:padding="10dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. "
+            android:textSize="14sp"
+            app:lineHeight="20dp" />
 
-            <TextView
-                android:id="@+id/pr_open_lblDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/poppins"
-                android:justificationMode="inter_word"
-                android:padding="10dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. "
-                android:textSize="14sp"
-                app:lineHeight="20dp" />
-
-            <Button
-                android:id="@+id/pr_open_btnClaim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Claim"
-                app:layout_columnWeight="1" />
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/pr_open_btnClaim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Claim"
+            app:layout_columnWeight="1" />
     </LinearLayout>
 
 </FrameLayout>

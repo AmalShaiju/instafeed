@@ -40,13 +40,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean loginSuccess = Context.Login(U.getFromTxtbox(txtUsername),U.getFromTxtbox(txtPassword));
                 if(loginSuccess){
-                    if(false){
+                    if(Context.loggedInUser.isClaimer()){
                         NaviagteTo(ClaimerViewActivity.class);
                     }else{
                         NaviagteTo(DonorViewActivity.class);
                     }
                 }else {
-                    Toast.makeText(getApplicationContext(),"Username or password does not match",Toast.LENGTH_LONG);
+                    Toast.makeText(v.getContext(),"Username or password does not match",Toast.LENGTH_LONG);
                 }
             }
         });

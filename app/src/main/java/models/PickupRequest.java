@@ -22,8 +22,8 @@ public class PickupRequest  implements Serializable {
     private LocalDateTime claimedOn;
     private LocalDateTime pickedupOn;
 
-    public PickupRequest(String location, String description,@Nullable Bitmap image) {
-        this.postedBy = Context.loggedInUser;
+    public PickupRequest(String location, String description, User postedBy,@Nullable Bitmap image) {
+        this.postedBy = postedBy;
         this.location = location;
         this.datePosted = LocalDateTime.now();
         this.image = image;

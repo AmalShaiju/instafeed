@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
@@ -45,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText txtNewPassword;
     EditText txtConfirmPassword;
     Button btnCreate;
+    TextView lblError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,11 +95,11 @@ public class RegisterActivity extends AppCompatActivity {
                         if(registerSuccess)
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         else
-                            Toast.makeText(getApplicationContext(),"Email already in use",Toast.LENGTH_LONG);
+                            showError("Email already in use");
                     }else
-                        Toast.makeText(getApplicationContext(),"Passwords don't match",Toast.LENGTH_LONG);
+                        showError("Passwords don't match");
                 }else
-                    Toast.makeText(getApplicationContext(),"Please fill all the fields",Toast.LENGTH_LONG);
+                    showError("Please fill all the fields");
             }
         });
     }
@@ -113,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnCreate = findViewById(R.id.user_register_btnCreateAcc);
         rbtnClaimer = findViewById(R.id.user_register_rbtnClaimer);
         txtOrganizationName = findViewById(R.id.user_register_txtOrgName);
+        lblError = findViewById(R.id.user_register_lblError);
 
     }
 
@@ -165,5 +168,10 @@ public class RegisterActivity extends AppCompatActivity {
             Status status = Autocomplete.getStatusFromIntent(data);
             Toast.makeText(getApplicationContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void showError(String msg){
+        lblError.setVisibility(View.VISIBLE);
+        lblError.setText(lblError.getText() + "\n-" + msg);
     }
 }

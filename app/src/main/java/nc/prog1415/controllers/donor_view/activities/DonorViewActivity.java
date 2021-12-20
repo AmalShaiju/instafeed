@@ -46,11 +46,6 @@ public class DonorViewActivity extends AppCompatActivity {
     private void setAdapter() {
         DonorViewRecycleAdapter adapter = new DonorViewRecycleAdapter(Context.getPostedByMe());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-
-        // add space between list items
-        // DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(openPrRecyclerView.getContext(), layoutManager.getOrientation());
-        // openPrRecyclerView.addItemDecoration(dividerItemDecoration);
-
         donorPrRecyclerView.setLayoutManager(layoutManager);
         donorPrRecyclerView.setItemAnimator(new DefaultItemAnimator());
         donorPrRecyclerView.setAdapter(adapter);

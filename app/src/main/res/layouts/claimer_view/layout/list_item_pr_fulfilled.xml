@@ -15,24 +15,25 @@
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="false">
 
-        <androidx.gridlayout.widget.GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:columnCount="2">
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/pr_fulfilled_imgItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
                 android:maxWidth="100dp"
                 android:maxHeight="200dp"
-                android:src="@drawable/table"
-                app:layout_columnWeight="2"
-                app:layout_rowWeight="1" />
+                android:minWidth="100dp"
+                android:minHeight="200dp"
+                android:padding="20dp"
+                android:src="@drawable/no_image"
+                app:layout_columnWeight="1" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="10dp"
@@ -44,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/roboto"
-                    android:text="1222 Natanial Crescent, Burlington"
+                    android:text="1222 Natanial Crescent, Burlington asd as a"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_columnWeight="2" />
@@ -54,7 +55,7 @@
                     android:layout_height="match_parent"
                     app:columnCount="2"
                     app:rowCount="4"
-                    app:useDefaultMargins="false">
+                    app:useDefaultMargins="true">
 
                     <TextView
                         android:id="@+id/textView15"
@@ -119,6 +120,7 @@
                 </androidx.gridlayout.widget.GridLayout>
 
             </LinearLayout>
-        </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 </FrameLayout>

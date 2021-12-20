@@ -5,11 +5,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import models.Context;
 import models.U;
 
 import models.PickupRequest;
@@ -59,10 +62,6 @@ public class PrFulFilledRecycleAdapter extends RecyclerView.Adapter<PrFulFilledR
         holder.lblClaimedOn.setText(U.ToDateString(fulFilledPrList.get(position).getClaimedOn()));
         holder.lblPickedUpOn.setText(U.ToDateString(fulFilledPrList.get(position).getPickedupOn()));
         holder.lblUsername.setText(fulFilledPrList.get(position).getPostedBy().getFullName());
-
-        //Bitmap itemImgBitMap = U.byteToBitMap(openPrList.get(position).getImages().get(0));
-        //ImageView image = (ImageView) holder.itemView.findViewById(R.id.imgItem);
-        // image.setImageBitmap(Bitmap.createScaledBitmap(itemImgBitMap, image.getWidth(), image.getHeight(), false));
     }
 
     @Override

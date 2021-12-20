@@ -6,11 +6,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import models.Context;
 import models.U;
 
 import models.PickupRequest;
@@ -56,14 +59,39 @@ public class PrClaimedRecycleAdapter extends RecyclerView.Adapter<PrClaimedRecyc
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.lblLocation.setText(claimedPrList.get(position).getLocation());
-        holder.lblPostedOn.setText(U.ToDateString(claimedPrList.get(position).getDatePosted()));
-        holder.lblClaimedOn.setText(U.ToDateString(claimedPrList.get(position).getClaimedOn()));
-        holder.lblUsername.setText(claimedPrList.get(position).getPostedBy().getFullName());
+        PickupRequest pr = claimedPrList.get(position);
+        holder.lblLocation.setText(pr.getLocation());
+        holder.lblPostedOn.setText(U.ToDateString(pr.getDatePosted()));
+        holder.lblClaimedOn.setText(U.ToDateString(pr.getClaimedOn()));
+        holder.lblUsername.setText(pr.getPostedBy().getFullName());
+        if(pr.getImage() != null){
+            holder.imgItem.setImageBitmap(pr.getImage());
+        }
+        holder.btnPickUp.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Context.PickupRequest(pr);
+                    Toast.makeText(holder.itemView.getContext(), "Request Fulfilled", Toast.LENGTH_SHORT).show();
 
-        //Bitmap itemImgBitMap = U.byteToBitMap(openPrList.get(position).getImages().get(0));
-        //ImageView image = (ImageView) holder.itemView.findViewById(R.id.imgItem);
-        // image.setImageBitmap(Bitmap.createScaledBitmap(itemImgBitMap, image.getWidth(), image.getHeight(), false));
+                } catch (Exception e) {
+                    Toast.makeText(holder.itemView.getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        holder.btnDropClaim.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Context.DropRequest(pr);
+                    Toast.makeText(holder.itemView.getContext(), "Dropped Claim", Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e) {
+                    Toast.makeText(holder.itemView.getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

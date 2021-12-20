@@ -1,5 +1,7 @@
 package nc.prog1415.controllers.donor_view.activities.recycler_adapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,13 +44,11 @@ public class DonorViewRecycleAdapter  extends RecyclerView.Adapter<DonorViewRecy
             lblClaimedOn = view.findViewById(R.id.donor_pr_lblClaimedOn);
             lblPickedUpOn = view.findViewById(R.id.donor_pr_lblPickedUpOn);
             lblClaimedBy = view.findViewById(R.id.donor_pr_lblClaimedBy);
-
             plcPostedOn = view.findViewById(R.id.donor_pr_plcPostedOn);
             plcClaimedOn = view.findViewById(R.id.donor_pr_plcClaimedOn);
             plcPickedUpOn = view.findViewById(R.id.donor_pr_plcPickedUpOn);
             plcClaimedBy = view.findViewById(R.id.donor_pr_plcClaimedBy);
-
-            imgItem = view.findViewById(R.id.pr_open_imgItem);
+            imgItem = view.findViewById(R.id.donor_pr_imgItem);
         }
     }
 
@@ -83,15 +83,12 @@ public class DonorViewRecycleAdapter  extends RecyclerView.Adapter<DonorViewRecy
         }
 
 
-
+        if(pr.getImage() != null){
+            holder.imgItem.setImageBitmap(pr.getImage());
+        }
 
         holder.lblLocation.setText(pr.getLocation());
         holder.lblPostedOn.setText(U.ToDateString(prList.get(position).getDatePosted()));
-
-
-        //Bitmap itemImgBitMap = U.byteToBitMap(openPrList.get(position).getImages().get(0));
-        //ImageView image = (ImageView) holder.itemView.findViewById(R.id.imgItem);
-        // image.setImageBitmap(Bitmap.createScaledBitmap(itemImgBitMap, image.getWidth(), image.getHeight(), false));
     }
 
     @Override

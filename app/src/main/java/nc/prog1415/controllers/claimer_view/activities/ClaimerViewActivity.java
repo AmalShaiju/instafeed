@@ -16,7 +16,6 @@ import nc.prog1415.controllers.claimer_view.fragments.PrFulfilledListFragment;
 import nc.prog1415.controllers.claimer_view.fragments.PrOpenListFragment;
 
 public class ClaimerViewActivity extends AppCompatActivity {
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -28,7 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@color/ghost_white"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:visibility="gone">
 
                 <EditText
                     android:id="@+id/pr_create_txtLocation"

@@ -6,11 +6,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import models.Context;
 import models.PickupRequest;
 import nc.prog1415.R;
 
@@ -38,6 +41,9 @@ public class PrOpenRecycleAdapter  extends RecyclerView.Adapter<PrOpenRecycleAda
             lblDescription = view.findViewById(R.id.pr_open_lblDescription);
             imgItem = view.findViewById(R.id.pr_open_imgItem);
             btnClaim = view.findViewById(R.id.pr_open_btnClaim);
+
+
+
         }
     }
 
@@ -50,14 +56,23 @@ public class PrOpenRecycleAdapter  extends RecyclerView.Adapter<PrOpenRecycleAda
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.lblLocation.setText(openPrList.get(position).getLocation());
-        holder.lblDate.setText(openPrList.get(position).getDatePosted().toString());
-        holder.lblUser.setText(openPrList.get(position).getPostedBy().getFullName());
-        holder.lblDescription.setText(openPrList.get(position).getDescription());
+        PickupRequest pr = openPrList.get(position);
+        holder.lblLocation.setText(pr.getLocation());
+        holder.lblDate.setText(pr.getDatePosted().toString());
+        holder.lblUser.setText(pr.getPostedBy().getFullName());
+        holder.lblDescription.setText(pr.getDescription());
+        holder.btnClaim.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Context.ClaimRequest(pr);
+                    Toast.makeText(holder.itemView.getContext(), "Request Claimed", Toast.LENGTH_SHORT).show();
 
-       //Bitmap itemImgBitMap = U.byteToBitMap(openPrList.get(position).getImages().get(0));
-       //ImageView image = (ImageView) holder.itemView.findViewById(R.id.imgItem);
-        // image.setImageBitmap(Bitmap.createScaledBitmap(itemImgBitMap, image.getWidth(), image.getHeight(), false));
+                } catch (Exception e) {
+                    Toast.makeText(holder.itemView.getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

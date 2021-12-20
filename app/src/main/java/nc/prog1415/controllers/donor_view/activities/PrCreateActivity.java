@@ -3,6 +3,7 @@ package nc.prog1415.controllers.donor_view.activities;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -34,6 +35,7 @@ import models.Context;
 import models.PickupRequest;
 import models.U;
 import nc.prog1415.R;
+import nc.prog1415.controllers.login.LoginActivity;
 
 public class PrCreateActivity extends AppCompatActivity {
     EditText txtLocation;
@@ -90,8 +92,10 @@ public class PrCreateActivity extends AppCompatActivity {
                 if(isInputValid()){
                     BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
                     Bitmap bitmap = drawable.getBitmap();
-                    PickupRequest newPr = new PickupRequest(U.getFromTxtbox(txtLocation),U.getFromTxtbox(txtDesc), bitmap);
-                    Context.prList.add(newPr);
+                    PickupRequest newPr = new PickupRequest(U.getFromTxtbox(txtLocation),U.getFromTxtbox(txtDesc),Context.loggedInUser, bitmap);
+                    Context.CreateNewPr(newPr);
+                    Toast.makeText(getApplicationContext(), "Pickup Requset Created", Toast.LENGTH_SHORT).show();
+                    NaviagteTo(DonorViewActivity.class);
                 }
             }
         });
@@ -163,6 +167,11 @@ public class PrCreateActivity extends AppCompatActivity {
 
     private boolean isInputValid(){
         return !(U.IsNullOrEmpty(U.getFromTxtbox(txtDesc)) && U.IsNullOrEmpty(U.getFromTxtbox(txtLocation)));
+    }
+
+    private void NaviagteTo(Class toActivity){
+        Intent intent = new Intent(PrCreateActivity.this,toActivity);
+        startActivity(intent);
     }
 
 }
