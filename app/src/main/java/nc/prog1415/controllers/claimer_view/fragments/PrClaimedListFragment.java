@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -74,13 +75,16 @@ public class PrClaimedListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pr_claimed_list, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        claimedPrList = new ArrayList();
+        if(!Context.getClaimedByMe().isEmpty()){
+            final TextView lblError = view.findViewById(R.id.pr_claimed_lblError);
+            lblError.setVisibility(View.GONE);
+        }
+
         claimedPrRecyclerView = view.findViewById(R.id.pr_claimed_recyView);
         setAdapter();
     }

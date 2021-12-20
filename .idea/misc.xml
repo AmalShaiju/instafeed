@@ -20,12 +20,15 @@
         <entry key="..\:/FinalAssigment/app/src/main/res/layout/fragment_pickup_request_fulfilled.xml" value="0.3417624521072797" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layout/fragment_pickup_request_list_view.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/activity_claimer_view.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/fragment_pr_claimed_list.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/fragment_pr_fulfilled_list.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/fragment_pr_open_list.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_claimed.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_fulfilled.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/claimer_view/layout/list_item_pr_open.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/donor_view/layout/activity_donor_view.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalAssigment/app/src/main/res/layouts/donor_view/layout/activity_pr_create.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/donor_view/layout/list_item_donor_pr.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/layouts/user_register/layout/activity_register.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalAssigment/app/src/main/res/menu/claimer_view_nav.xml" value="0.20520833333333333" />

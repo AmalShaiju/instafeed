@@ -8,57 +8,62 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PickupRequestListViewActivity">
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/pr_open_lblError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="There is no open pickup request right now \n Come back later..."
+            android:textSize="16sp"
+            app:lineHeight="30dp" />
+    </LinearLayout>
 
-            <androidx.gridlayout.widget.GridLayout
-                android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@color/ghost_white"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/pr_create_txtLocation"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:background="@color/ghost_white"
-                android:padding="10dp"
-                android:visibility="gone">
+                android:ems="10"
+                android:hint="Location"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                app:layout_columnWeight="1"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                <EditText
-                    android:id="@+id/pr_create_txtLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Location"
-                    android:inputType="textPostalAddress"
-                    android:minHeight="48dp"
-                    app:layout_columnWeight="1"
-                    tools:ignore="SpeakableTextPresentCheck" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_gravity="center_horizontal|center_vertical"
+                app:srcCompat="@drawable/my_location"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:layout_gravity="center_horizontal|center_vertical"
-                    app:srcCompat="@drawable/my_location"
-                    tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.gridlayout.widget.GridLayout>
 
-            </androidx.gridlayout.widget.GridLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/pr_claimed_recyView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pr_claimed_recyView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </FrameLayout>

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -81,6 +82,10 @@ public class PrFulfilledListFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        if(!Context.getPickedupByMe().isEmpty()){
+            final TextView lblError = view.findViewById(R.id.pr_fulfilled_lblError);
+            lblError.setVisibility(View.GONE);
+        }
         fulfilledPrRecyclerView = view.findViewById(R.id.pr_fulfilled_recyView);
         setAdapter();
     }

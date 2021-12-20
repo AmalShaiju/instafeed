@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".controllers.claimer_view.fragments.PrClaimedListFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pr_claimed_lblError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Nothing to see here... \n You havent claimed any requests yet.."
+            android:textSize="16sp"
+            app:lineHeight="30dp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pr_claimed_recyView"
         android:layout_width="match_parent"

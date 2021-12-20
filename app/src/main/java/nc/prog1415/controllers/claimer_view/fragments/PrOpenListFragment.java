@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -80,6 +81,10 @@ public class PrOpenListFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        if(!Context.getAllOpenPr().isEmpty()){
+            final TextView lblError = view.findViewById(R.id.pr_open_lblError);
+            lblError.setVisibility(View.GONE);
+        }
         openPrRecyclerView = view.findViewById(R.id.pr_claimed_recyView);
         setAdapter();
     }

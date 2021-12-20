@@ -172,6 +172,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void showError(String msg){
         lblError.setVisibility(View.VISIBLE);
-        lblError.setText(lblError.getText() + "\n-" + msg);
+        lblError.setText("Please fix the following errors" + "\n-" + msg);
     }
 }

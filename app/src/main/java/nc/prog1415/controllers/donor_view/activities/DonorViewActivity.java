@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,6 +31,10 @@ public class DonorViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_donor_view);
         btnCreateRequest = findViewById(R.id.btnCreateRequest);
 
+        if(!Context.getPostedByMe().isEmpty()){
+           final TextView lblError = findViewById(R.id.donor_pr_lblError);
+           lblError.setVisibility(View.GONE);
+        }
 
         btnCreateRequest.setOnClickListener(new View.OnClickListener() {
             @Override
